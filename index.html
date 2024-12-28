@@ -1,0 +1,184 @@
+import React from 'react';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Check, Globe, Phone } from 'lucide-react';
+
+const PricingCards = () => {
+  const vpnFeatures = [
+    'Access to 100Mbps networking server',
+    'Low latency ping for gaming',
+    'Secure tunnelling to South Africa',
+  ];
+
+  return (
+    <div className="max-w-7xl mx-auto p-4 space-y-12">
+      {/* VPN Services Section */}
+      <div className="space-y-8">
+        <div className="text-center space-y-4">
+          <div className="flex items-center justify-center gap-2">
+            <Globe className="h-8 w-8 text-blue-600" />
+            <h2 className="text-3xl font-bold">VPN Solutions</h2>
+          </div>
+          <p className="text-gray-500">Choose your premium VPN package</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          {/* Weekly Plan */}
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>Weekly Premium</CardTitle>
+              <CardDescription>Perfect for short-term needs</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-6">
+                <span className="text-3xl font-bold">KES 100</span>
+                <span className="text-gray-500 ml-2">/week</span>
+              </div>
+              <ul className="space-y-2">
+                {vpnFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Get Started
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Monthly Plan */}
+          <Card className="flex flex-col relative border-blue-500 shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm">Most Popular</span>
+            </div>
+            <CardHeader>
+              <CardTitle>Monthly Premium</CardTitle>
+              <CardDescription>Best value for regular users</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-6">
+                <span className="text-3xl font-bold">KES 250</span>
+                <span className="text-gray-500 ml-2">/month</span>
+              </div>
+              <ul className="space-y-2">
+                {vpnFeatures.map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Get Started
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Monthly + Bot Plan */}
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>Premium + Bot</CardTitle>
+              <CardDescription>Complete solution with bot hosting</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-6">
+                <span className="text-3xl font-bold">KES 350</span>
+                <span className="text-gray-500 ml-2">/month</span>
+              </div>
+              <ul className="space-y-2">
+                {[...vpnFeatures, 'Bot hosting included'].map((feature, index) => (
+                  <li key={index} className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-600 text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Get Started
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </div>
+
+      {/* Virtual Numbers Section */}
+      <div className="space-y-8">
+        <div className="text-center space-y-4">
+          <div className="flex items-center justify-center gap-2">
+            <Phone className="h-8 w-8 text-blue-600" />
+            <h2 className="text-3xl font-bold">Virtual Numbers</h2>
+          </div>
+          <p className="text-gray-500">Get virtual numbers for WhatsApp and Telegram</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {/* UK Numbers */}
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>UK Numbers</CardTitle>
+              <CardDescription>Virtual numbers with UK prefix</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-6">
+                <span className="text-3xl font-bold">KES 500</span>
+              </div>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 text-sm">Compatible with WhatsApp</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 text-sm">Compatible with Telegram</span>
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Get UK Number
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* USA Numbers */}
+          <Card className="flex flex-col">
+            <CardHeader>
+              <CardTitle>USA Numbers</CardTitle>
+              <CardDescription>Virtual numbers with USA prefix</CardDescription>
+            </CardHeader>
+            <CardContent className="flex-grow">
+              <div className="mb-6">
+                <span className="text-3xl font-bold">KES 600</span>
+              </div>
+              <ul className="space-y-2">
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 text-sm">Compatible with WhatsApp</span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-600 text-sm">Compatible with Telegram</span>
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                Get USA Number
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PricingCards;
